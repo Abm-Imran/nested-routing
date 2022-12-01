@@ -1,0 +1,17 @@
+.dynamic-link{
+    display: inline;
+}
+
+.dynamic-link .active{
+    color: red;
+}
+.dynamic-link a{
+    text-decoration: none;
+    color: rgb(14, 14, 14);
+    font-size: 25px;
+    /* display: inline;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    background: rgb(137, 92, 183); */
+}

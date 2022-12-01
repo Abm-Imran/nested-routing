@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
+import './Posts.css'
+
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
@@ -15,9 +17,16 @@ const Posts = () => {
         <div>
             <h2>{posts.length}</h2>
             {
-                // posts.map(post => <Link to={'/posts/'+ post.id} >{post.id}  </Link>)
-                posts.map(post => <Link to={`/posts/${post.id}`} >{post.id}  </Link>)
+                // posts.map(post => <Link to={'/posts/'+ post.id} >{post.id}  </Link>) * Ai link o kaj korbe *
+
+                posts.map(post => <div className='dynamic-link' >
+                    <NavLink
+                        key={post.id}
+                        to={`/posts/${post.id}`}
+                    >{post.id}  </NavLink>
+                </div>)
             }
+            <Outlet></Outlet>
         </div>
     );
 };
